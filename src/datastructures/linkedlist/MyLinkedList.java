@@ -6,7 +6,7 @@ public class MyLinkedList {
     private Node tail;
     private int length;
 
-    class Node{
+    class Node{ // Everytime we create an object of this class a new node will be created.
 
         int value;
         Node next;
@@ -21,7 +21,7 @@ public class MyLinkedList {
         Node newNode = new Node(value);
         head = newNode;
         tail = newNode;
-        length++;
+        length = 1;
     }
 
     public void printList(){
@@ -35,14 +35,31 @@ public class MyLinkedList {
     public void append(int value){
         Node newNode = new Node(value);
 
-        if(head==null && tail ==null){
-            head.value = value;
-            tail.value = value;
-        }else {
-            tail.value = value;
+        if(length==0){
+            head = newNode;
+            tail = newNode;
+        }else{
+            tail.next = newNode;
+            tail = newNode;
         }
-//        tail.value = value;
-//        System.out.println(tail.value);
+        length++;
+    }
+
+    public void removeLastItem(){
+        Node temp = head;
+        Node pre = head;
+
+        if(length == 0){
+        }
+        while (temp.next != null){
+            pre = temp;
+            temp = head.next;
+            if(temp == null){
+                tail = pre;
+                tail.next = null;
+            }
+        }
+
     }
 
     public void getHead(){
