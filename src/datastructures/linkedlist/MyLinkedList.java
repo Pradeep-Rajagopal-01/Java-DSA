@@ -45,20 +45,28 @@ public class MyLinkedList {
         length++;
     }
 
-    public void removeLastItem(){
+    public Node removeLastItem(){
+        if(length == 0){
+            return null;
+        }
         Node temp = head;
         Node pre = head;
-
-        if(length == 0){
-        }
-        while (temp.next != null){
+        while (temp.next != null) {
             pre = temp;
-            temp = head.next;
-            if(temp == null){
-                tail = pre;
-                tail.next = null;
-            }
+            temp = temp.next;
         }
+        tail = pre;
+        tail.next = null;
+        length--;
+//        if(head.next == null && tail.next == null){
+//            head = null;
+//            tail = null;
+//        }
+        if(length == 0){
+            head = null;
+            tail = null;
+        }
+        return temp;
 
     }
 
