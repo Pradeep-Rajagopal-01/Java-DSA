@@ -76,31 +76,43 @@ public class MyLinkedList {
         if(length == 0){
             head = newNode;
             tail = newNode;
+        }else {
+            newNode.next = head;
+            head = newNode;
+            length++;
         }
-        newNode.next = head;
-        head = newNode;
-        length++;
 
     }
 
     public Node removeFirstItem(){
 
-        if(length == 0 && head == null && tail == null){
-            return null;
-        } else if (length ==1) {
-            Node temp = head;
-            head = head.next;
-            tail = tail.next;
-            length--;
-            return temp;
-         }else {
-            Node temp = head;
-            head = head.next;
-            temp.next = null;
-            length--;
-            return temp;
-        }
 
+        //This is the code I wrote and the below code is from the lecture. Both do the same thing but the lecture code is better.
+//        if(length == 0 && head == null && tail == null){
+//            return null;
+//        } else if (length ==1) {
+//            Node temp = head;
+//            head = head.next;
+//            tail = tail.next;
+//            length--;
+//            return temp;
+//         }else {
+//            Node temp = head;
+//            head = head.next;
+//            temp.next = null;
+//            length--;
+//            return temp;
+//        }
+
+        if (length == 0) return null;
+        Node temp = head;
+        head = head.next;
+        temp.next = null;
+        length--;
+        if (length == 0){
+            tail.next = null;
+        }
+        return temp;
     }
 
     public void getHead(){
