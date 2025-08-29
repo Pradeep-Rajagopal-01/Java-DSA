@@ -121,16 +121,10 @@ public class MyLinkedList {
     }
 
     public Node getValueAtIndex(int index){
-        int len = 0;
         Node temp = head;
         if (index < 0 || index > length) return null;
-        while(temp.next != null || temp.next == null){
+        for(int i = 0; i<index;i++){
             temp = temp.next;
-            if(len==index){
-                return temp;
-            }else {
-                len++;
-            }
         }
 
         return temp;
