@@ -6,6 +6,11 @@ public class Main {
 
         MyLinkedList myLinkedList = new MyLinkedList(1);
         myLinkedList.append(2);
+        myLinkedList.append(3);
+        myLinkedList.append(5);
+        myLinkedList.append(7);
+
+
 
 //        try {
 //            System.out.println("Removing Last Item : " + myLinkedList.removeLastItem().value);
@@ -16,10 +21,16 @@ public class Main {
 
 //        myLinkedList.prepend(7);
 
+//        try {
+//            System.out.println("Removing First Item : " + myLinkedList.removeFirstItem().value);
+//        } catch (NullPointerException e) {
+//            System.out.println("Nothing to remove(Beginning)");;
+//        }
+
         try {
-            System.out.println("Removing First Item : " + myLinkedList.removeFirstItem().value);
+            System.out.println(myLinkedList.getValueAtIndex(1).value);
         } catch (NullPointerException e) {
-            System.out.println("Nothing to remove(Beginning)");;
+            System.out.println(e);
         }
 
         System.out.println("Printing all the items from the list : ");

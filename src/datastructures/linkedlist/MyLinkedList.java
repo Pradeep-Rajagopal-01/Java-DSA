@@ -24,6 +24,12 @@ public class MyLinkedList {
         length = 1;
     }
 
+    public void makeListEmpty(){
+        head = null;
+        tail = null;
+        length = 0;
+    }
+
     public void printList(){
         Node temp = head;
         while (temp!=null){
@@ -67,7 +73,6 @@ public class MyLinkedList {
             tail = null;
         }
         return temp;
-
     }
 
     public void prepend(int value){
@@ -112,6 +117,22 @@ public class MyLinkedList {
         if (length == 0){
             tail.next = null;
         }
+        return temp;
+    }
+
+    public Node getValueAtIndex(int index){
+        int len = 0;
+        Node temp = head;
+        if (index < 0 || index > length) return null;
+        while(temp.next != null || temp.next == null){
+            temp = temp.next;
+            if(len==index){
+                return temp;
+            }else {
+                len++;
+            }
+        }
+
         return temp;
     }
 
