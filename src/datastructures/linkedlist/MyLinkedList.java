@@ -84,8 +84,8 @@ public class MyLinkedList {
         }else {
             newNode.next = head;
             head = newNode;
-            length++;
         }
+        length++;
 
     }
 
@@ -160,14 +160,12 @@ public class MyLinkedList {
 
     public Node removeNodeAtIndex(int index){
 
-        if (index < 0 || index > length) return null;
+        if (index < 0 || index >= length) return null;
 
         if (index == 0){
-            length--;
             return removeFirstItem();
         }
-        if (index == length){
-            length--;
+        if (index == length -1){
             return removeLastItem();
         }
         Node pre = getValueAtIndex(index -1);
@@ -179,6 +177,16 @@ public class MyLinkedList {
 
     }
 
+    public void reverse(){
+        Node temp = head;
+        head = tail;
+        tail = temp;
+
+    }
+
+    public int returnLastNodeIndex(){
+        return length -1;
+    }
     public void getHead(){
         System.out.println("Head: " + head.value);
     }

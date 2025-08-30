@@ -37,7 +37,12 @@ public class Main {
 
        // System.out.println(myLinkedList.insertNodeAtIndex(0,7));
 
-        System.out.println(myLinkedList.removeNodeAtIndex(6));
+//        try {
+//            System.out.println(myLinkedList.removeNodeAtIndex(5).value);
+//        } catch (NullPointerException e) {
+//            System.out.println(e);;
+//        }
+
 
 
         System.out.println("Printing all the items from the list : ");
