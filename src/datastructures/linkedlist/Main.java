@@ -6,9 +6,9 @@ public class Main {
 
         MyLinkedList myLinkedList = new MyLinkedList(1);
         myLinkedList.append(2);
-//        myLinkedList.append(3);
-//        myLinkedList.append(4);
-//        myLinkedList.append(5);
+        myLinkedList.append(3);
+        myLinkedList.append(4);
+        myLinkedList.append(5);
 
 
 
@@ -35,7 +35,9 @@ public class Main {
 
        // System.out.println(myLinkedList.setValueAtIndex(4,8));
 
-        System.out.println(myLinkedList.insertNodeAtIndex(0,7));
+       // System.out.println(myLinkedList.insertNodeAtIndex(0,7));
+
+        System.out.println(myLinkedList.removeNodeAtIndex(6));
 
 
         System.out.println("Printing all the items from the list : ");

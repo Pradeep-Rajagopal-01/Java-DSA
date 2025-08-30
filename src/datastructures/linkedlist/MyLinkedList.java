@@ -158,8 +158,26 @@ public class MyLinkedList {
         return true;
     }
 
+    public Node removeNodeAtIndex(int index){
 
+        if (index < 0 || index > length) return null;
 
+        if (index == 0){
+            length--;
+            return removeFirstItem();
+        }
+        if (index == length){
+            length--;
+            return removeLastItem();
+        }
+        Node pre = getValueAtIndex(index -1);
+        Node temp = pre.next;
+        pre.next = temp.next;
+        temp.next = null;
+        length--;
+        return temp;
+
+    }
 
     public void getHead(){
         System.out.println("Head: " + head.value);
