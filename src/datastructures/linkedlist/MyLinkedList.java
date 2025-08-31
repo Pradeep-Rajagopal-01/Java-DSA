@@ -192,6 +192,31 @@ public class MyLinkedList {
          }
     }
 
+    //DSA Question-Find Middle Node ( ** Interview Question)
+    public Node findMiddleNode(){
+
+	    Node slow = head;
+	    Node fast = head;
+
+	    while(fast.next != null){
+            for (int i = 0;i < 2; i++) {
+                fast = fast.next;
+                //slow = fast;
+                if (fast.next == null){
+                    return slow;
+                }else {
+                    fast = fast.next;
+                    slow = fast;
+                }
+            }
+        }
+//        if (fast.next == null){
+//            slow = slow.next;
+//        }
+        return slow;
+	}
+
+
     public int returnLastNodeIndex(){
         return length -1;
     }
