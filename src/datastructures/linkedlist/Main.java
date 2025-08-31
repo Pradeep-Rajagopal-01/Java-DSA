@@ -43,7 +43,7 @@ public class Main {
 //            System.out.println(e);;
 //        }
 
-
+        myLinkedList.reverse();
 
         System.out.println("Printing all the items from the list : ");
         myLinkedList.printList();
