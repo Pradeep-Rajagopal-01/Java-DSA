@@ -221,6 +221,56 @@ public class MyLinkedList {
         return false;
     }
 
+    //DSA Question- Find Kth Node From End ( ** Interview Question)
+    public Node findKthFromEnd(int k){
+        Node slow = head;
+        Node fast = head;
+
+        if (head == null && tail == null){
+            return null;
+        }
+        if (k == 2 && head.next == null){
+            return null;
+        }
+        if (head == tail){
+            return head;
+        }
+        if (k <= 0){
+            return null;
+        }
+        for (int i = 1; i < k; i++) {
+            fast = fast.next;
+            if (fast == null){
+                return null;
+            }
+        }
+        while (fast != null && fast.next != null) {
+            fast = fast.next;
+            slow = slow.next;
+
+            if (fast.next == null){
+                return slow;
+            }
+        }
+        return slow;
+
+
+
+//        while (fast != null && fast.next != null) {
+//           if (k <= 0){
+//               return null;
+//           }
+//            for (int i = 1; i < k; i++) {
+//                fast = fast.next;
+//                slow = slow.next;
+//                if (i + 1 == k) {
+//                    return slow;
+//                }
+//            }
+//            return slow;
+//        }
+//        return slow;
+    }
 
     public int returnLastNodeIndex(){
         return length -1;
