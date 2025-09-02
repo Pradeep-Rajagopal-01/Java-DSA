@@ -228,48 +228,29 @@ public class MyLinkedList {
 
         if (head == null && tail == null){
             return null;
-        }
-        if (k == 2 && head.next == null){
+        } else if (k == 2 && head.next == null) {
             return null;
-        }
-        if (head == tail){
+        } else if (head == tail) {
             return head;
-        }
-        if (k <= 0){
+        } else if (k <= 0) {
             return null;
-        }
-        for (int i = 1; i < k; i++) {
-            fast = fast.next;
-            if (fast == null){
-                return null;
+        }else {
+            for (int i = 1; i < k; i++) {
+                fast = fast.next;
+                if (fast == null) {
+                    return null;
+                }
             }
-        }
-        while (fast != null && fast.next != null) {
-            fast = fast.next;
-            slow = slow.next;
+            while (fast != null && fast.next != null) {
+                fast = fast.next;
+                slow = slow.next;
 
-            if (fast.next == null){
-                return slow;
+                if (fast.next == null) {
+                    return slow;
+                }
             }
         }
         return slow;
-
-
-
-//        while (fast != null && fast.next != null) {
-//           if (k <= 0){
-//               return null;
-//           }
-//            for (int i = 1; i < k; i++) {
-//                fast = fast.next;
-//                slow = slow.next;
-//                if (i + 1 == k) {
-//                    return slow;
-//                }
-//            }
-//            return slow;
-//        }
-//        return slow;
     }
 
     public int returnLastNodeIndex(){
