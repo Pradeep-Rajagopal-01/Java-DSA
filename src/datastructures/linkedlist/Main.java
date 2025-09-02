@@ -5,10 +5,10 @@ public class Main {
     public static void main(String[] args) {
 
         MyLinkedList myLinkedList = new MyLinkedList(1);
-        myLinkedList.append(2);
-        myLinkedList.append(3);
-        myLinkedList.append(4);
-        myLinkedList.append(5);
+//        myLinkedList.append(2);
+//        myLinkedList.append(3);
+//        myLinkedList.append(4);
+//        myLinkedList.append(5);
 //        myLinkedList.append(6);
 //        myLinkedList.append(7);
 //        myLinkedList.append(8);
@@ -50,11 +50,13 @@ public class Main {
 
         //myLinkedList.reverse();
 
-        try {
-            System.out.println(myLinkedList.findMiddleNode().value);
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+//        try {
+//            System.out.println(myLinkedList.findMiddleNode().value);
+//        } catch (Exception e) {
+//            System.out.println(e);
+//        }
+
+        System.out.println(myLinkedList.hasLoop());
 
         System.out.println("Printing all the items from the list : ");
         myLinkedList.printList();

@@ -24,7 +24,7 @@ public class MyLinkedList {
         length = 1;
     }
 
-    public void makeListEmpty(){
+    public void makeEmpty(){
         head = null;
         tail = null;
         length = 0;
@@ -204,21 +204,37 @@ public class MyLinkedList {
         return slow;
     }
 
+    //DSA Question-Has Loop ( ** Interview Question)
+    //Note run "Main_Method_For_DSA_Problem_HasLoop" if you want to execute the below code.
+    public boolean hasLoop(){
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if(slow == fast){
+                return true;
+            }
+        }
+        return false;
+    }
 
 
     public int returnLastNodeIndex(){
         return length -1;
     }
-    public void getHead(){
-        System.out.println("Head: " + head.value);
+    public Node getHead() {
+        return head;
     }
 
-    public void gettail(){
-        System.out.println("Tail: " + tail.value);
+    public Node getTail() {
+        return tail;
     }
 
-    public void getLength(){
-        System.out.println("Length: " + length);
+    public int getLength() {
+        return length;
     }
 
 
