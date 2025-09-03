@@ -223,24 +223,22 @@ public class MyLinkedList {
 
     //DSA Question- Find Kth Node From End ( ** Interview Question)
     public Node findKthFromEnd(int k){
+       //My Code -- Not perfect but passes the test.
         Node slow = head;
         Node fast = head;
-
+        for (int i = 1; i < k; i++) { //This loop will determine if "k" is out of Index.
+            fast = fast.next;
+            if (fast == null) {
+                return null;
+            }
+        }
         if (head == null && tail == null){
-            return null;
-        } else if (k == 2 && head.next == null) {
             return null;
         } else if (head == tail) {
             return head;
         } else if (k <= 0) {
             return null;
         }else {
-            for (int i = 1; i < k; i++) {
-                fast = fast.next;
-                if (fast == null) {
-                    return null;
-                }
-            }
             while (fast != null && fast.next != null) {
                 fast = fast.next;
                 slow = slow.next;
@@ -251,6 +249,23 @@ public class MyLinkedList {
             }
         }
         return slow;
+//----------------------------------------------------------------------------------------------------------------------
+        //Turorial Code:
+//        if (k <= 0) return null;
+//
+//        Node slow = head;
+//        Node fast = head;
+//
+//        for (int i = 0; i < k; i++) {
+//            if (fast == null) return null;
+//            fast = fast.next;
+//        }
+//
+//        while (fast != null) {
+//            slow = slow.next;
+//            fast = fast.next;
+//        }
+//        return slow;
     }
 
     public int returnLastNodeIndex(){
