@@ -1,5 +1,7 @@
 package datastructures.linkedlist;
 
+import java.util.HashSet;
+
 public class MyLinkedList {
 
     private Node head;
@@ -223,7 +225,7 @@ public class MyLinkedList {
 
     //DSA Question- Find Kth Node From End ( ** Interview Question)
     public Node findKthFromEnd(int k){
-       //My Code -- Not perfect but passes the test.
+       //My Code
         Node slow = head;
         Node fast = head;
         for (int i = 1; i < k; i++) { //This loop will determine if "k" is out of Index.
@@ -267,6 +269,26 @@ public class MyLinkedList {
 //        }
 //        return slow;
     }
+
+    //DSA Question-Remove Duplicates ( ** Interview Question)
+    public void removeDUplicates() {
+        Node current = head;
+
+        while (current!=null){
+            Node runner = current;
+            while (runner!=null){
+                if (current.value==runner.next.value){
+                    runner.next = runner.next.next;
+                    length--;
+                }
+                runner = runner.next;
+                current = current.next;
+            }
+        }
+
+
+    }
+
 
     public int returnLastNodeIndex(){
         return length -1;

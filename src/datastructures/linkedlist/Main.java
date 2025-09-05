@@ -10,10 +10,10 @@ public class Main {
         myLinkedList.append(4);
         myLinkedList.append(5);
         myLinkedList.append(6);
-//        myLinkedList.append(7);
-//        myLinkedList.append(8);
+//        myLinkedList.append(1);
+//        myLinkedList.append(1);
 //        myLinkedList.append(9);
-//        myLinkedList.append(10);
+//        myLinkedList.append(1);
 
 
 
@@ -49,10 +49,10 @@ public class Main {
 //        }
 
         //myLinkedList.reverse();
+        myLinkedList.removeDUplicates();
 
-
-        System.out.println("Printing all the items from the list : ");
-        myLinkedList.printList();
+//        System.out.println("Printing all the items from the list : ");
+//        myLinkedList.printList();
 
 
 
