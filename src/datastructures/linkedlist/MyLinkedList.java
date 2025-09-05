@@ -275,18 +275,18 @@ public class MyLinkedList {
         Node current = head;
 
         while (current!=null){
-            Node runner = current;
-            while (runner!=null){
+            Node runner=current;
+
+            while (runner!=null && runner.next!=null){
                 if (current.value==runner.next.value){
                     runner.next = runner.next.next;
                     length--;
+                }else {
+                    runner = runner.next;
                 }
-                runner = runner.next;
-                current = current.next;
             }
+            current = current.next;
         }
-
-
     }
 
 
