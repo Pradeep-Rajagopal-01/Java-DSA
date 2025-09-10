@@ -8,9 +8,9 @@ public class Main {
         myLinkedList.append(0);
         myLinkedList.append(1);
         myLinkedList.append(1);
-//        myLinkedList.append(5);
-//        myLinkedList.append(6);
-//        myLinkedList.append(1);
+        myLinkedList.append(0);
+        myLinkedList.append(0);
+        myLinkedList.append(1);
 //        myLinkedList.append(6);
 //        myLinkedList.append(9);
 //        myLinkedList.append(9);

@@ -295,8 +295,9 @@ public class MyLinkedList {
         Node current = head;
 
         while (current!=null){
+            num = num*2 + current.value;
+            current = current.next;
         }
-
         return num;
     }
 
