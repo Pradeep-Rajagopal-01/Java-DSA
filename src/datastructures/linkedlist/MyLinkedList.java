@@ -271,7 +271,7 @@ public class MyLinkedList {
     }
 
     //DSA Question-Remove Duplicates ( ** Interview Question)
-    public void removeDUplicates() {
+    public void removeDuplicates() {
         Node current = head;
 
         while (current!=null){
@@ -287,6 +287,17 @@ public class MyLinkedList {
             }
             current = current.next;
         }
+    }
+
+    //DSA Question-Binary to Decimal ( ** Interview Question)
+    public int binaryToDecimal(){
+        int num = 0;
+        Node current = head;
+
+        while (current!=null){
+        }
+
+        return num;
     }
 
 
