@@ -4,13 +4,13 @@ public class Main {
 
     public static void main(String[] args) {
 
-        MyLinkedList myLinkedList = new MyLinkedList(1);
-        myLinkedList.append(0);
+        MyLinkedList myLinkedList = new MyLinkedList(6);
+        myLinkedList.append(2);
         myLinkedList.append(1);
-        myLinkedList.append(1);
-        myLinkedList.append(0);
-        myLinkedList.append(0);
-        myLinkedList.append(1);
+        myLinkedList.append(2);
+//        myLinkedList.append(0);
+//        myLinkedList.append(0);
+//        myLinkedList.append(1);
 //        myLinkedList.append(6);
 //        myLinkedList.append(9);
 //        myLinkedList.append(9);
@@ -51,7 +51,9 @@ public class Main {
         //myLinkedList.reverse();
 //        myLinkedList.removeDuplicates();
 
-        System.out.println(myLinkedList.binaryToDecimal());
+//        System.out.println(myLinkedList.binaryToDecimal());
+
+        myLinkedList.partitionList(3);
 
         System.out.println("Printing all the items from the list : ");
         myLinkedList.printList();

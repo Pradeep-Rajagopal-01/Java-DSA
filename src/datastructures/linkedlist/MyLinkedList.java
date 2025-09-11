@@ -301,6 +301,27 @@ public class MyLinkedList {
         return num;
     }
 
+    //DSA Question-Partition List ( ** Interview Question)
+    public void partitionList(int x){
+        Node temp = head;
+        Node pre = head;
+        for (int i=0;i<length;i++){
+            pre = temp;
+            temp = temp.next;
+            if (temp.value < x && i==0){
+                pre.next = temp.next;
+                temp.next = head;
+                head = temp;
+            } else if (temp.value < x) {
+                Node tracker = head;
+                pre.next = temp.next;
+                tracker = head.next;
+                head.next = temp;
+                temp.next = tracker;
+            }
+        }
+    }
+
 
     public int returnLastNodeIndex(){
         return length -1;
