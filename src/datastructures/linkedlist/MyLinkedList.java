@@ -303,14 +303,28 @@ public class MyLinkedList {
 
     //DSA Question-Partition List ( ** Interview Question)
     public void partitionList(int x){
+        if (head==null){
+            return;
+        }
         Node d1 = new Node(0);
         Node d2 = new Node(0);
         Node prev1 = d1;
-        Node prev2;
-        Node temp = head;
-       while (temp!=null){
+        Node prev2 = d2;
+        Node current = head;
 
-       }
+        while (current!=null){
+            if (current.value < x){
+                prev1.next = current;
+                prev1 = current;
+            }else {
+                prev2.next = current;
+                prev2 = current;
+            }
+            current = current.next;
+            prev2.next = null;
+            prev1.next = d2.next;
+            head = d1.next;
+        }
     }
 
 
