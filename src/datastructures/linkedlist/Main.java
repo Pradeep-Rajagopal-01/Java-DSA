@@ -53,7 +53,9 @@ public class Main {
 
 //        System.out.println(myLinkedList.binaryToDecimal());
 
-        myLinkedList.partitionList(3);
+//        myLinkedList.partitionList(3);
+
+        myLinkedList.reverseBetween(1,3);
 
         System.out.println("Printing all the items from the list : ");
         myLinkedList.printList();

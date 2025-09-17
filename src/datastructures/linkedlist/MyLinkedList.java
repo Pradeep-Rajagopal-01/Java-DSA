@@ -316,7 +316,7 @@ public class MyLinkedList {
             if (current.value < x){
                 prev1.next = current;
                 prev1 = current;
-            }else {
+            }else{
                 prev2.next = current;
                 prev2 = current;
             }
@@ -325,6 +325,13 @@ public class MyLinkedList {
             prev1.next = d2.next;
             head = d1.next;
         }
+    }
+
+    //DSA Question-Reverse Between( ** Interview Question)
+    public void reverseBetween(int m,int n){
+        Node prev = head;
+        Node current = head.next;
+        System.out.println(length);
     }
 
 
