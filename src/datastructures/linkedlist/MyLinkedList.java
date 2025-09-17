@@ -331,7 +331,16 @@ public class MyLinkedList {
     public void reverseBetween(int m,int n){
         Node prev = head;
         Node current = head.next;
-        System.out.println(length);
+        Node move = current.next;
+
+        int loopCounter = length-2;
+
+        for (int i=0; i<=loopCounter; i++){
+            current.next = move.next;
+            move.next = current;
+            prev.next = move;
+            prev = prev.next;
+        }
     }
 
 
