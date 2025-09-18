@@ -328,17 +328,21 @@ public class MyLinkedList {
     }
 
     //DSA Question-Reverse Between( ** Interview Question)
-    public void reverseBetween(int m,int n){
-        Node prev = head;
-        Node current = head.next;
-        Node move = current.next;
+    public void reverseBetween(int startIndex,int endIndex){
+        Node dummy = new Node(0);
+        dummy.next = head;
+        Node prev = dummy;
+        Node current;
 
-        int loopCounter = length-2;
-
-        for (int i=0; i<=loopCounter; i++){
-            current.next = move.next;
-            move.next = current;
-            prev.next = move;
+        for (int i=0; i<startIndex; i++){
+            prev = prev.next;
+        }
+        for (int i=0;i<endIndex-startIndex;i++){
+            current = prev.next;
+            Node toMove = current.next;
+            current.next = toMove.next;
+            prev.next = toMove;
+            toMove.next = current;
             prev = prev.next;
         }
     }
