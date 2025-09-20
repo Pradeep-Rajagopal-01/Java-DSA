@@ -5,13 +5,10 @@ public class Main {
     public static void main(String[] args) {
 
         MyLinkedList myLinkedList = new MyLinkedList(6);
-        myLinkedList.append(5);
         myLinkedList.append(4);
         myLinkedList.append(2);
-        myLinkedList.append(0);
         myLinkedList.append(1);
-//        myLinkedList.append(1);
-//        myLinkedList.append(6);
+        myLinkedList.append(4);
 //        myLinkedList.append(9);
 //        myLinkedList.append(9);
 
