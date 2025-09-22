@@ -370,6 +370,7 @@ public class MyLinkedList {
             dummy1 = dummy1.next;
         }
         head = prevOfHeadNode.next;
+        prevOfHeadNode.next=null;
     }
 
 
