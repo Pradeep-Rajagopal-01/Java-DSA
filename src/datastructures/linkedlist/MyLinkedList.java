@@ -349,6 +349,30 @@ public class MyLinkedList {
         head = dummy.next;
     }
 
+    //DSA Question-Swap Nodes in Pairs ( **Interview Question)
+    public void swapPairs(){
+        if (head==null){
+            return;
+        } else if (head.next==null) {
+            return;
+        }
+        Node prevOfHeadNode = new Node(0);
+        prevOfHeadNode.next = head;
+        Node prev = prevOfHeadNode;
+        Node dummy1 = prev.next;
+
+        while (dummy1!=null && dummy1.next!=null) {
+            prev.next = dummy1.next;
+            dummy1.next = dummy1.next.next;
+            prev = prev.next;
+            prev.next = dummy1;
+            prev = dummy1;
+            dummy1 = dummy1.next;
+        }
+        head = prevOfHeadNode.next;
+    }
+
+
 
     public int returnLastNodeIndex(){
         return length -1;

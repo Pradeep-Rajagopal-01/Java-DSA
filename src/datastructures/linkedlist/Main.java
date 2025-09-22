@@ -52,7 +52,9 @@ public class Main {
 
 //        myLinkedList.partitionList(3);
 
-        myLinkedList.reverseBetween(1,3);
+//        myLinkedList.reverseBetween(1,3);
+
+        myLinkedList.swapPairs();
 
         System.out.println("Printing all the items from the list : ");
         myLinkedList.printList();
