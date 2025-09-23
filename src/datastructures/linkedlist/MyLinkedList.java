@@ -306,7 +306,7 @@ public class MyLinkedList {
         if (head==null){
             return;
         }
-        Node d1 = new Node(0);
+        Node d1 = new Node(0);//Note:Probably need to make d1 and d2 null at the end didn't look into it, but do it one day.
         Node d2 = new Node(0);
         Node prev1 = d1;
         Node prev2 = d2;
@@ -347,6 +347,7 @@ public class MyLinkedList {
             prev.next = toMove;
         }
         head = dummy.next;
+        dummy.next=null;
     }
 
     //DSA Question-Swap Nodes in Pairs ( **Interview Question)
@@ -373,11 +374,10 @@ public class MyLinkedList {
         prevOfHeadNode.next=null;
     }
 
-
-
     public int returnLastNodeIndex(){
         return length -1;
     }
+
     public Node getHead() {
         return head;
     }
