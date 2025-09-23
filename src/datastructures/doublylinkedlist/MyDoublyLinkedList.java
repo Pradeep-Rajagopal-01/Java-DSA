@@ -23,6 +23,12 @@ public class MyDoublyLinkedList {
         length=1;
     }
 
+    public void makeEmpty() {
+        head = null;
+        tail = null;
+        length = 0;
+    }
+
     public void append(int value){
         Node newNode = new Node(value);
         if (head==null){
@@ -37,22 +43,47 @@ public class MyDoublyLinkedList {
     }
 
     public Node removeLast() {
+        Node temp=tail;
         if (length == 0) {
             return null;
         } else if (length==1) {
-            Node temp=head;
             head=null;
             tail=null;
-            length--;
-            return temp;
         } else {
-            Node temp = tail;
             tail = tail.prev;
             tail.next = null;
             temp.prev = null;
-            length--;
-            return temp;
         }
+        length--;
+        return temp;
+    }
+
+    public void prepend(int value){
+        Node newNode = new Node(value);
+        if (length==0) {
+            head=newNode;
+            tail=newNode;
+        }else {
+            newNode.next=head;
+            head.prev=newNode;
+            head=newNode;
+        }
+        length++;
+    }
+
+    public Node removeFirst(){
+       Node temp=head;
+        if(length==0){
+            return null;
+        } else if (length==1) {
+            head=head.next;
+            head.prev=null;
+        }else {
+            head=head.next;
+            head.prev=null;
+        }
+        length--;
+        return temp;
     }
 
     public void printList(){
