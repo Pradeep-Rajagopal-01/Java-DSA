@@ -6,6 +6,10 @@ public class Main {
         MyDoublyLinkedList doublyLinkedList = new MyDoublyLinkedList(7);
         doublyLinkedList.append(5);
         doublyLinkedList.append(8);
+        doublyLinkedList.append(1);
+        doublyLinkedList.append(2);
+        doublyLinkedList.append(3);
+        doublyLinkedList.append(4);
 
         //System.out.println("Value of removed node(last-node) : " + doublyLinkedList.removeLast().value);
 
@@ -14,6 +18,8 @@ public class Main {
 //        doublyLinkedList.prepend(9);
 
 //        System.out.println("Value of the removed node (first-node)  : " +  doublyLinkedList.removeFirst().value);
+
+        System.out.println(doublyLinkedList.get(4).value);
 
         System.out.println("Length of the Doubly-Linked-List : " + doublyLinkedList.getLength());
 
