@@ -76,11 +76,12 @@ public class MyDoublyLinkedList {
         if(length==0){
             return null;
         } else if (length==1) {
-            head=head.next;
-            head.prev=null;
+            head=null;
+            tail=null;
         }else {
             head=head.next;
             head.prev=null;
+            temp.next=null;
         }
         length--;
         return temp;
