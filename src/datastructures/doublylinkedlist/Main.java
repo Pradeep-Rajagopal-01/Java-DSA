@@ -19,7 +19,9 @@ public class Main {
 
 //        System.out.println("Value of the removed node (first-node)  : " +  doublyLinkedList.removeFirst().value);
 
-        System.out.println(doublyLinkedList.get(4).value);
+//        System.out.println(doublyLinkedList.get(4).value);
+
+        doublyLinkedList.set(2,10);
 
         System.out.println("Length of the Doubly-Linked-List : " + doublyLinkedList.getLength());
 

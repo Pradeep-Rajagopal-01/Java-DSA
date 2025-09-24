@@ -87,7 +87,7 @@ public class MyDoublyLinkedList {
         return temp;
     }
 
-    public Node get(int index) {
+    public Node get(int index) {//Note: This is your logic and it works perfectly.
         Node temp = head;
         if (index < 0 || index >= length) return null;
         if (index <= length / 2) {
@@ -96,12 +96,25 @@ public class MyDoublyLinkedList {
             }
         } else {
             temp = tail;
-            for (int i = length-1; i > index; i--) {
-                temp = tail.prev;
+            for (int i=0; i<(length-1) - index;i++) {
+                temp = temp.prev;
             }
         }
         return temp;
     }
+
+    public boolean set(int index, int value){
+        Node temp=get(index);
+        if (temp!=null){
+            temp.value=value;
+            return true;
+        }
+        return false;
+    }
+
+//    public boolean insert(int index, int value){
+//
+//    }
 
     public void printList(){
         Node temp = head;
