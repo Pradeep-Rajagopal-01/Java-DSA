@@ -21,7 +21,9 @@ public class Main {
 
 //        System.out.println(doublyLinkedList.get(4).value);
 
-        doublyLinkedList.set(2,10);
+//        doublyLinkedList.set(2,10);
+
+        doublyLinkedList.insert(2,17);
 
         System.out.println("Length of the Doubly-Linked-List : " + doublyLinkedList.getLength());
 

@@ -112,9 +112,35 @@ public class MyDoublyLinkedList {
         return false;
     }
 
-//    public boolean insert(int index, int value){
+    public boolean insert(int index, int value) {//Works as intended but fails the tests will fix it.
+        if (index<0 || index>length) return false;
+        if (length==0){
+            prepend(value);
+            return true;
+        }
+        if(index==length) {
+            append(value);
+            return true;
+        }
+        Node newNode = new Node(value);
+        Node before=get(index-1);
+        Node after=before.next;
+        newNode.prev=before;
+        newNode.next=after;
+        before.next=newNode;
+        after.prev=newNode;
+        length++;
+        return true;
+    }
+
+//    public Node remove(int index){
+//        Node pre=get(index-1);
+//        Node temp=pre.next;
+//        Node post=temp.next;
 //
 //    }
+
+
 
     public void printList(){
         Node temp = head;
