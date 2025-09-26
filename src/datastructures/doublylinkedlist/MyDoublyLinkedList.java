@@ -112,9 +112,9 @@ public class MyDoublyLinkedList {
         return false;
     }
 
-    public boolean insert(int index, int value) {//Works as intended but fails the tests will fix it.
+    public boolean insert(int index, int value) {
         if (index<0 || index>length) return false;
-        if (length==0){
+        if (index==0){
             prepend(value);
             return true;
         }
@@ -133,12 +133,22 @@ public class MyDoublyLinkedList {
         return true;
     }
 
-//    public Node remove(int index){
-//        Node pre=get(index-1);
-//        Node temp=pre.next;
-//        Node post=temp.next;
-//
-//    }
+    public Node remove(int index){
+        if (index<0 || index>=length) return null;
+
+        if (index==0){
+            return removeFirst();
+        } else if (index==length-1) {
+            return removeLast();
+        }
+        Node temp=get(index);
+        temp.next.prev=temp.prev;
+        temp.prev.next=temp.next;
+        temp.next=null;
+        temp.prev=null;
+        length--;
+        return temp;
+    }
 
 
 
