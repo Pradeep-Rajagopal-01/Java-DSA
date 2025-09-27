@@ -2,6 +2,8 @@ package datastructures.doublylinkedlist;
 
 import datastructures.linkedlist.MyLinkedList;
 
+import javax.imageio.metadata.IIOMetadataFormat;
+
 public class MyDoublyLinkedList {
     private Node head;
     private Node tail;
@@ -150,7 +152,22 @@ public class MyDoublyLinkedList {
         return temp;
     }
 
+    //DSA Question-Palindrome Checker( ** Interview Question)
+    public boolean isPalindrome(){
+        if(length<=1) return true;
 
+        Node forward=head;
+        Node backward=tail;
+
+        for (int i=0; i<length/2; i++){
+            if (forward.value!=backward.value){
+                return false;
+            }
+            forward=forward.next;
+            backward=backward.prev;
+        }
+        return true;
+    }
 
     public void printList(){
         Node temp = head;

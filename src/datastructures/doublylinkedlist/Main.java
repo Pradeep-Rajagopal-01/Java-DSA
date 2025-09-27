@@ -3,13 +3,14 @@ package datastructures.doublylinkedlist;
 public class Main {
 
     public static void main(String[] args) {
-        MyDoublyLinkedList doublyLinkedList = new MyDoublyLinkedList(7);
-        doublyLinkedList.append(5);
-        doublyLinkedList.append(8);
-        doublyLinkedList.append(1);
+        MyDoublyLinkedList doublyLinkedList = new MyDoublyLinkedList(1);
         doublyLinkedList.append(2);
         doublyLinkedList.append(3);
-        doublyLinkedList.append(4);
+        doublyLinkedList.append(3);
+        doublyLinkedList.append(2);
+        doublyLinkedList.append(1);
+
+
 
         //System.out.println("Value of removed node(last-node) : " + doublyLinkedList.removeLast().value);
 
@@ -25,7 +26,9 @@ public class Main {
 
 //        doublyLinkedList.insert(7 ,17);
 
-        doublyLinkedList.remove(0);
+//        doublyLinkedList.remove(0);
+
+        System.out.println(doublyLinkedList.isPalindrome());
 
         System.out.println("Length of the Doubly-Linked-List : " + doublyLinkedList.getLength());
 
