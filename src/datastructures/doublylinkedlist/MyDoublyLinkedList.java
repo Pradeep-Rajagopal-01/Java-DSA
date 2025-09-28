@@ -169,6 +169,21 @@ public class MyDoublyLinkedList {
         return true;
     }
 
+    //DSA Question-Reverse ( ** Interview Question)
+    public void reverse(){//Your Logic
+        Node current=head;
+        Node temp=null;
+
+        while (current!=null){
+            current.prev=current.next;
+            current.next=temp;
+            temp=current;
+            current=current.prev;
+        }
+        tail=head;
+        head=temp;
+    }
+
     public void printList(){
         Node temp = head;
         while (temp!=null){
