@@ -3,12 +3,12 @@ package datastructures.doublylinkedlist;
 public class Main {
 
     public static void main(String[] args) {
-        MyDoublyLinkedList doublyLinkedList = new MyDoublyLinkedList(1);
-        doublyLinkedList.append(2);
-        doublyLinkedList.append(3);
+        MyDoublyLinkedList doublyLinkedList = new MyDoublyLinkedList(7);
         doublyLinkedList.append(4);
-        doublyLinkedList.append(5);
-        doublyLinkedList.append(6);
+        doublyLinkedList.append(3);
+        doublyLinkedList.append(2);
+        doublyLinkedList.append(4);
+        doublyLinkedList.append(4);
 
 
 
@@ -30,7 +30,9 @@ public class Main {
 
 //        System.out.println(doublyLinkedList.isPalindrome());
 
-        doublyLinkedList.reverse();
+//        doublyLinkedList.reverse();
+
+        doublyLinkedList.partitionList(3);
 
         System.out.println("Length of the Doubly-Linked-List : " + doublyLinkedList.getLength());
 

@@ -184,6 +184,25 @@ public class MyDoublyLinkedList {
         head=temp;
     }
 
+    //DSA Question-Partition List ( ** Interview Question)--Unsolved
+    public void partitionList(int value){
+        if (head==null) return;
+        Node dummy1=new Node(0);
+        Node dummy2=new Node(0);
+        Node prev1;
+        Node prev2;
+        Node current=head;
+
+        while (current!=null) {
+            if (current.value < value) {
+                prev1 = current;
+                current = current.next;
+                prev1.next.prev = prev1.prev;
+                prev1.prev.next = prev1.next;
+            }
+        }
+    }
+
     public void printList(){
         Node temp = head;
         while (temp!=null){
