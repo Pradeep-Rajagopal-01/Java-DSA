@@ -187,18 +187,32 @@ public class MyDoublyLinkedList {
     //DSA Question-Partition List ( ** Interview Question)--Unsolved
     public void partitionList(int value){
         if (head==null) return;
+
         Node dummy1=new Node(0);
         Node dummy2=new Node(0);
-        Node prev1;
-        Node prev2;
+        Node prev1=dummy1;
+        Node prev2=dummy2;
         Node current=head;
 
         while (current!=null) {
             if (current.value < value) {
-                prev1 = current;
-                current = current.next;
-                prev1.next.prev = prev1.prev;
-                prev1.prev.next = prev1.next;
+                if (current.prev==null){
+                    current.prev=prev1;
+                    prev1.next=current;
+                    prev1=prev1.next;
+                    current=current.next;
+                    prev1.next=null;
+                }else {
+                    current.prev.next = current.next;
+                    current.next.prev = current.prev;
+                    current.prev = prev1;
+                    prev1.next = current;
+                    prev1 = prev1.next;
+                    current = current.next;
+                    prev1.next = null;
+                }
+            }else {
+                current=current.next;
             }
         }
     }

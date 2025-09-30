@@ -3,11 +3,11 @@ package datastructures.doublylinkedlist;
 public class Main {
 
     public static void main(String[] args) {
-        MyDoublyLinkedList doublyLinkedList = new MyDoublyLinkedList(7);
+        MyDoublyLinkedList doublyLinkedList = new MyDoublyLinkedList(1);
         doublyLinkedList.append(4);
         doublyLinkedList.append(3);
         doublyLinkedList.append(2);
-        doublyLinkedList.append(4);
+        doublyLinkedList.append(1);
         doublyLinkedList.append(4);
 
 
