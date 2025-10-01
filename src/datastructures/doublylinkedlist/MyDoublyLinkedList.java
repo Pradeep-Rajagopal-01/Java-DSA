@@ -221,6 +221,17 @@ public class MyDoublyLinkedList {
         }
     }
 
+    public void reverseBetween(int startInxed,int endIndex){
+        if (length==0) return;
+        if (startInxed<0 || endIndex>length) return;
+
+        Node temp=head;
+        for (int i=0; i<startInxed; i++){
+            temp=temp.next;
+        }
+
+    }
+
     public void printList(){
         Node temp = head;
         while (temp!=null){
@@ -228,6 +239,7 @@ public class MyDoublyLinkedList {
             temp = temp.next;
         }
     }
+
     public Node getHead() {
         return head;
     }
