@@ -224,12 +224,23 @@ public class MyDoublyLinkedList {
     public void reverseBetween(int startInxed,int endIndex){
         if (length==0) return;
         if (startInxed<0 || endIndex>length) return;
+        if (startInxed==endIndex)return;;
 
-        Node temp=head;
+        Node dummy1=new Node(0);
+        dummy1=head.prev;
+        Node dummy2=head;
+        Node dummy3=head.next;
         for (int i=0; i<startInxed; i++){
-            temp=temp.next;
+            dummy2=dummy2.next;
+            dummy3=dummy3.next;
         }
 
+        for (int i=0; i<1; i++){
+            dummy2.next=dummy3.next;
+            dummy3.next=dummy2;
+            dummy3.prev=dummy2.prev;
+            dummy2.prev=dummy3;
+        }
     }
 
     public void printList(){

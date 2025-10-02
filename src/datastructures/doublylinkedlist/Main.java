@@ -32,7 +32,9 @@ public class Main {
 
 //        doublyLinkedList.reverse();
 
-        doublyLinkedList.partitionList(3);
+//        doublyLinkedList.partitionList(3);
+
+        doublyLinkedList.reverseBetween(1,4);
 
         System.out.println("Length of the Doubly-Linked-List : " + doublyLinkedList.getLength());
 
