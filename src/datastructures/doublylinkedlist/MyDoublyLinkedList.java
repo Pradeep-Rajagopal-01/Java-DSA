@@ -222,38 +222,37 @@ public class MyDoublyLinkedList {
     }
 
     public void reverseBetween(int startIndex,int endIndex){
-        if (head==null || head==tail) return;
-//        if (startIndex<0 || endIndex>length) return;
-        if (startIndex==endIndex)return;
+       if (head==null || head.next==null || startIndex==endIndex) return;
 
-        Node temp=head;
-        for (int i=0; i<endIndex; i++){
-            temp=temp.next;
-            if (temp==null) return;
-        }
-        temp=null;
+       Node dummy1=new Node(0);
+       dummy1.next=head;
+       head.prev=dummy1;
 
-        Node dummy1=new Node(0);
-        dummy1=head.prev;
-        Node dummy2=head;
-        Node dummy3=head.next;
+       Node prev=head;
+       for (int i=0; i<startIndex-1; i++){
+           prev=prev.next;
+       }
+       Node current=prev.next;
 
-        for (int i=0; i<startIndex; i++){
-            dummy2=dummy2.next;
-            dummy3=dummy3.next;
-        }
-
-        for (int i=0; i<endIndex-startIndex; i++){
-
-        }
-
-//        dummy2.next=dummy3.next;
-//        dummy3.next.prev=dummy2;
-//        dummy3.next=dummy2;
-//        dummy2.prev.next=dummy3;
-//        dummy3.prev=dummy2.prev;
-//        dummy2.prev=dummy3;
-//        dummy3=dummy2.next;
+       Node toMove=current;
+       for (int i=0; i<endIndex-startIndex; i++){
+           toMove=current.next;
+           current.next=toMove.next;
+           toMove.next.prev=current;
+           toMove.next=current;
+           toMove.prev=prev;
+           current.prev=toMove;
+           prev.next=toMove;
+       }
+       head=dummy1.next;
+       dummy1.next=null;
+//        toMove=toMove.next;
+//        current.next=toMove.next;
+//        toMove.next.prev=toMove.prev;
+//        prev.next=toMove;
+//        toMove.next=current;
+//        toMove.prev=prev;
+//        current.prev=toMove;
     }
 
     public void printList(){
