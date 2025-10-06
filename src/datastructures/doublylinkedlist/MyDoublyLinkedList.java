@@ -222,7 +222,13 @@ public class MyDoublyLinkedList {
     }
 
     public void reverseBetween(int startIndex,int endIndex){
-       if (head==null || head.next==null || startIndex==endIndex) return;
+       if (head==null || head.next==null || startIndex==endIndex || startIndex<0) return;
+
+       Node temp=head;
+       for (int i=0; i<=endIndex; i++){
+           temp=temp.next;
+           if (temp==null || temp.next==null) return;
+       }
 
        Node dummy1=new Node(0);
        dummy1.next=head;
@@ -239,20 +245,13 @@ public class MyDoublyLinkedList {
            toMove=current.next;
            current.next=toMove.next;
            toMove.next.prev=current;
-           toMove.next=current;
+           toMove.next=prev.next;
            toMove.prev=prev;
-           current.prev=toMove;
            prev.next=toMove;
        }
        head=dummy1.next;
+       head.prev=null;
        dummy1.next=null;
-//        toMove=toMove.next;
-//        current.next=toMove.next;
-//        toMove.next.prev=toMove.prev;
-//        prev.next=toMove;
-//        toMove.next=current;
-//        toMove.prev=prev;
-//        current.prev=toMove;
     }
 
     public void printList(){

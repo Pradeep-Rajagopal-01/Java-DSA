@@ -34,7 +34,7 @@ public class Main {
 
 //        doublyLinkedList.partitionList(3);
 
-        doublyLinkedList.reverseBetween(1,4);
+        doublyLinkedList.reverseBetween(0,2);
 
         System.out.println("Length of the Doubly-Linked-List : " + doublyLinkedList.getLength());
 
