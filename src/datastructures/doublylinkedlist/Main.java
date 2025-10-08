@@ -4,11 +4,11 @@ public class Main {
 
     public static void main(String[] args) {
         MyDoublyLinkedList doublyLinkedList = new MyDoublyLinkedList(1);
-        doublyLinkedList.append(4);
-        doublyLinkedList.append(3);
         doublyLinkedList.append(2);
-        doublyLinkedList.append(1);
+        doublyLinkedList.append(3);
         doublyLinkedList.append(4);
+        doublyLinkedList.append(5);
+        doublyLinkedList.append(6);
 
 
 
@@ -34,7 +34,7 @@ public class Main {
 
 //        doublyLinkedList.partitionList(3);
 
-        doublyLinkedList.reverseBetween(0,2);
+        doublyLinkedList.reverseBetween(0,5);
 
         System.out.println("Length of the Doubly-Linked-List : " + doublyLinkedList.getLength());
 
