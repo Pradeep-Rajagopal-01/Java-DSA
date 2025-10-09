@@ -6,7 +6,7 @@ public class Main {
         MyDoublyLinkedList doublyLinkedList = new MyDoublyLinkedList(1);
         doublyLinkedList.append(2);
         doublyLinkedList.append(3);
-//        doublyLinkedList.append(4);
+        doublyLinkedList.append(4);
 //        doublyLinkedList.append(5);
 //        doublyLinkedList.append(6);
 

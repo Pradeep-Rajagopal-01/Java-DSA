@@ -267,18 +267,24 @@ public class MyDoublyLinkedList {
         Node dummy1=prev.next;
         Node dummy2=dummy1.next;
 
+
         while (dummy2!=null){
             dummy1.next=dummy2.next;
             if (dummy2.next != null) {
-                dummy2.next.prev=prev.next;
+                dummy2.next.prev=dummy1;
             }
-            dummy2.next=prev.next;
+            dummy2.next=dummy1;
             dummy2.prev=dummy1.prev;
             dummy1.prev=dummy2;
             prev.next=dummy2;
+
             prev=dummy1;
             dummy1=dummy1.next;
-            dummy2=dummy1.next;
+            if (dummy1!=null) {
+                dummy2 = dummy1.next;
+            }else {
+                break;
+            }
         }
         head=dummy.next;
         head.prev=null;
