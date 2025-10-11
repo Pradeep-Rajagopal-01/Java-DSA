@@ -1,4 +1,4 @@
-package datastructures.stack;
+package datastructures.stack.implimentation.linkedliststack;
 
 public class MyStack {
     private Node top;
