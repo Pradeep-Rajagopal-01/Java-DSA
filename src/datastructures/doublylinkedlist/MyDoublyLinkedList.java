@@ -221,6 +221,7 @@ public class MyDoublyLinkedList {
         }
     }
 
+    //DSA Question-Reverse Between ( ** Interview Question)
     public void reverseBetween(int startIndex,int endIndex){
         if (head == null || startIndex == endIndex) {
             return;
@@ -256,6 +257,7 @@ public class MyDoublyLinkedList {
         head.prev = null;
     }
 
+    //DSA Question-Swap Nodes in Pairs ( ** Interview Question)
     public void swapPairs(){
         if (head==null || head.next==null) return;
 
