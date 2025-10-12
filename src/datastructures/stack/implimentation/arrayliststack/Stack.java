@@ -44,4 +44,16 @@ public class Stack<T> {
         return stackList.remove(size()-1);
     }
 
+    //DSA Question-Reverse String ( ** Interview Question)
+    public void reverseString(String input){
+
+        Stack<Character> characterStack = new Stack<>();
+        char[] stringToBeReversed = input.toCharArray();
+        for (int i=0; i<stringToBeReversed.length; i++){
+            characterStack.push(stringToBeReversed[i]);
+        }
+
+        characterStack.printStack();
+    }
+
 }
