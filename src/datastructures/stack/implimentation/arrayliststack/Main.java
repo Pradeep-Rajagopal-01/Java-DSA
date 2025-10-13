@@ -13,7 +13,7 @@ public class Main {
 
         stack.pop();
 
-        stack.reverseString("Prad");
+        System.out.println("Reversed String : " + stack.reverseString("Prad"));
 
 
         System.out.println("Size of the stack is : " + stack.size());
@@ -23,6 +23,8 @@ public class Main {
 
 
     }
+
+
 
 
 }

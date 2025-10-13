@@ -45,15 +45,20 @@ public class Stack<T> {
     }
 
     //DSA Question-Reverse String ( ** Interview Question)
-    public void reverseString(String input){
+    public String reverseString(String string) {
 
-        Stack<Character> characterStack = new Stack<>();
-        char[] stringToBeReversed = input.toCharArray();
-        for (int i=0; i<stringToBeReversed.length; i++){
-            characterStack.push(stringToBeReversed[i]);
+        Stack<Character> stack = new Stack<>();
+        String reversedString = "";
+
+        for (char c : string.toCharArray()) {
+            stack.push(c);
         }
 
-        characterStack.printStack();
+        while (!stack.isEmpty()) {
+            reversedString += stack.pop();
+        }
+
+        return reversedString;
     }
 
 }
