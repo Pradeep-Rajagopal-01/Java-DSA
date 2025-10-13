@@ -47,18 +47,18 @@ public class Stack<T> {
     //DSA Question-Reverse String ( ** Interview Question)
     public String reverseString(String string) {
 
-        Stack<Character> stack = new Stack<>();
-        String reversedString = "";
+        Stack<Character> charStack = new Stack<>();
 
         for (char c : string.toCharArray()) {
-            stack.push(c);
+            charStack.push(c);
         }
 
-        while (!stack.isEmpty()) {
-            reversedString += stack.pop();
+        StringBuilder stringBuilder = new StringBuilder();
+        while (!charStack.isEmpty()) {
+            stringBuilder.append(charStack.pop());
         }
 
-        return reversedString;
+        return stringBuilder.toString();
     }
 
 }
