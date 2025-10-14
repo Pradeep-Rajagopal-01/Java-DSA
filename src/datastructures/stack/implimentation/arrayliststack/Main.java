@@ -13,13 +13,15 @@ public class Main {
 
         stack.pop();
 
-        System.out.println("Reversed String : " + stack.reverseString("Prad"));
-
 
         System.out.println("Size of the stack is : " + stack.size());
 
         System.out.println("Printing all the items from the stack : ");
         stack.printStack();
+
+//        System.out.println("Reversed String : " + stack.reverseString("Prad"));
+
+        System.out.println(stack.isBalancedParentheses(")"));
 
 
     }
