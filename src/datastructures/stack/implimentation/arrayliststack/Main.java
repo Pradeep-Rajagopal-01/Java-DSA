@@ -40,26 +40,52 @@ public class Main {
         return characterStack.isEmpty();
     }
 
+    //DSA Question-Sort Stack ( ** Interview Question)
+    public static void sortStack(Stack<Integer> stack){
+        Stack<Integer> tempStack = new Stack<>();
+        int length= stack.size();
+        for (int i = 0; i <length ; i++) {
+            Integer temp = stack.pop();
+            if (tempStack.isEmpty()) {
+                //temp = stack.pop();
+//                System.out.println(stack.pop());
+                tempStack.push(temp);
+            } else if (temp>tempStack.peek()) {
+                tempStack.push(temp);
+            } else if (temp<tempStack.peek()) {
+                stack.push(tempStack.pop());
+                tempStack.push(temp);
+            }
+//            }else {
+//                tempStack.push(temp);
+//            }
+
+        }
+        stack.printStack();
+    }
+
 
     public static void main(String[] args) {
         Stack stack = new Stack();
-//        stack.push(7);
-//        stack.push(8);
-//        stack.push(9);
-//        stack.push(10);
+        stack.push(4);
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
 
 //        System.out.println(stack.getStackList());
 
-        stack.pop();
+//        stack.pop();
 
 //        System.out.println("Reversed String : " + reverseString("Prad")); //DSA Question-Reverse String ( ** Interview Question)
 
 //        System.out.println(isBalancedParentheses("[()"));//DSA Question-Parentheses Balanced ( ** Interview Question)
 
-        System.out.println("Size of the stack is : " + stack.size());
+        sortStack(stack);
 
-        System.out.println("Printing all the items from the stack : ");
-        stack.printStack();
+//        System.out.println("Size of the stack is : " + stack.size());
+//
+//        System.out.println("Printing all the items from the stack : ");
+//        stack.printStack();
 
     }
 
