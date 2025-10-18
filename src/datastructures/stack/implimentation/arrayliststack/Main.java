@@ -43,7 +43,7 @@ public class Main {
     //DSA Question-Sort Stack ( ** Interview Question)
     public static void sortStack(Stack<Integer> stack){
         Stack<Integer> tempStack = new Stack<>();
-        int length= stack.size();
+        int length=stack.size();
         for (int i = 0; i <length ; i++) {
             Integer temp = stack.pop();
             if (tempStack.isEmpty()) {
@@ -51,17 +51,15 @@ public class Main {
 //                System.out.println(stack.pop());
                 tempStack.push(temp);
             } else if (temp>tempStack.peek()) {
-                tempStack.push(temp);
+               tempStack.push(temp);
             } else if (temp<tempStack.peek()) {
                 stack.push(tempStack.pop());
                 tempStack.push(temp);
             }
-//            }else {
-//                tempStack.push(temp);
-//            }
-
         }
+//        tempStack.printStack();
         stack.printStack();
+
     }
 
 
