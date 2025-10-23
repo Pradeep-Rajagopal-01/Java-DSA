@@ -1,4 +1,4 @@
-package datastructures.queue;
+package datastructures.queue.implimentation.linkedlistqueue;
 
 public class Main {
 
