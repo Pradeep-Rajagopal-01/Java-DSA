@@ -43,23 +43,18 @@ public class Main {
     //DSA Question-Sort Stack ( ** Interview Question)
     public static void sortStack(Stack<Integer> stack){
         Stack<Integer> tempStack = new Stack<>();
-        int length=stack.size();
-        for (int i = 0; i <length ; i++) {
-            Integer temp = stack.pop();
-            if (tempStack.isEmpty()) {
-                //temp = stack.pop();
-//                System.out.println(stack.pop());
-                tempStack.push(temp);
-            } else if (temp>tempStack.peek()) {
-               tempStack.push(temp);
-            } else if (temp<tempStack.peek()) {
+        while (!stack.isEmpty()) {
+            int temp = stack.pop();
+            while (!tempStack.isEmpty() && tempStack.peek()>temp){
                 stack.push(tempStack.pop());
-                tempStack.push(temp);
             }
+            tempStack.push(temp);
         }
 //        tempStack.printStack();
+        while (!tempStack.isEmpty()){
+            stack.push(tempStack.pop());
+        }
         stack.printStack();
-
     }
 
 
