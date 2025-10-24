@@ -37,4 +37,16 @@ public class StackQueue {
             stack1.push(stack2.pop());
         }
     }
+
+    //DSA Question-Queue Using Stacks: Dequeue ( ** Interview Question)
+    public Integer dequeue(){
+
+        if (stack1.isEmpty()){
+            return null;
+        }else {
+            return stack1.pop();
+        }
+
+    }
+
 }
