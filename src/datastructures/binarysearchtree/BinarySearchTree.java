@@ -3,7 +3,7 @@ package datastructures.binarysearchtree;
 //Note: We are not gonna use a constructor for the "BinarySearchTree" class cause we want root to be null when we create an object of this class.
 //      We are gonna use the insert() to add nodes.
 public class BinarySearchTree {
-    Node root;
+    private Node root;
 
     class Node{
         int value;
@@ -12,6 +12,32 @@ public class BinarySearchTree {
 
         private Node(int value){
             this.value=value;
+        }
+    }
+
+    public boolean insert(int value){
+        Node newNode=new Node(value);
+        if (root==null) {
+            root=newNode;
+            return true;
+        }
+
+        Node temp=root;
+        while (true){
+            if (temp.value==newNode.value) return false;
+            if (newNode.value<temp.value){
+                if (temp.left==null) {
+                    temp.left = newNode;
+                    return true;
+                }
+                temp=temp.left;
+            }else {
+                if (temp.right==null) {
+                    temp.right = newNode;
+                    return true;
+                }
+                temp=temp.right;
+            }
         }
     }
 }
