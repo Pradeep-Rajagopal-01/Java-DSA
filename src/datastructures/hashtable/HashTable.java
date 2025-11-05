@@ -1,5 +1,7 @@
 package datastructures.hashtable;
 
+import java.util.ArrayList;
+
 public class HashTable {
     private int size=7;
     private Node[] dataMap;
@@ -50,10 +52,22 @@ public class HashTable {
         Node temp=dataMap[index];
 
         while (temp!=null){
-            if (temp.key==key) return temp.value;
+            if (temp.key.equals(key)) return temp.value;
             temp=temp.next;
         }
         return 0;
+    }
+
+    public ArrayList keys(){//So this method will take all the keys in our hash table and store it in an array list.
+        ArrayList<String> allKeys = new ArrayList<>();
+        for (int i = 0; i <dataMap.length; i++) {
+            Node temp = dataMap[i];
+            while (temp!=null){
+                allKeys.add(temp.key);
+                temp=temp.next;
+            }
+        }
+        return allKeys;
     }
 
     public void printTable() {

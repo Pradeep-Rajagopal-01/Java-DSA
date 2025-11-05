@@ -12,8 +12,10 @@ public class Main {
         hashTable.set("Mega Yatch", 2);
         hashTable.set("Lamborgini", 1);
 
-        System.out.println("Value of the provided key: "  + hashTable.get("BMW"));
+//        System.out.println("Value of the provided key: "  + hashTable.get("BMW"));
 
-        hashTable.printTable();
+        System.out.println(hashTable.keys());
+
+//        hashTable.printTable();
     }
 }
