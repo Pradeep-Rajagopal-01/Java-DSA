@@ -34,6 +34,21 @@ public class Main {
         return duplicates;
     }
 
+    //DSA Question-First Non-Repeating Character ( ** Interview Question)
+    public static Character firstNonRepeatingChar(String inputString){
+        HashMap<Character,Integer> hashMap = new HashMap<>();
+
+        for (char c : inputString.toCharArray()){
+            hashMap.put(c,hashMap.getOrDefault(c,0)+1);
+        }
+        System.out.println(hashMap);
+
+        for (Character c : hashMap.keySet()){
+            if (hashMap.get(c) > 1) return c;
+        }
+        return null;
+    }
+
     
     public static void main(String[] args) {
 
@@ -56,8 +71,9 @@ public class Main {
 //        System.out.println(itemInCommon(array1,array2)); //Interview Question.
 
 
-        System.out.println(findDuplicates(new int[] {5,2,2,3,5}));
+//        System.out.println(findDuplicates(new int[] {5,2,2,3,5}));//DSA Question-Find Duplicates ( ** Interview Question)
 
+        firstNonRepeatingChar("Prad");
 
 
     }
