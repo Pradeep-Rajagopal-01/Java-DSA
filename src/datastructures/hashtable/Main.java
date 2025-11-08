@@ -18,28 +18,23 @@ public class Main {
         return false;
     }
 
+    //DSA Question-Find Duplicates ( ** Interview Question)
     public static List<Integer> findDuplicates(int[] nums){
         HashMap<Integer,Integer> numCounts = new HashMap<>();
         ArrayList<Integer> arrayList = new ArrayList<>();
         for (int num : nums) {
-            if (numCounts.get(num) == null) {
-                numCounts.put(num, 0);
-            }
-            numCounts.replace(num,numCounts.get(num)+1);
+            numCounts.put(num, numCounts.getOrDefault(num,0)+1);
         }
-        System.out.println(numCounts);
         ArrayList<Integer> duplicates = new ArrayList<>();
-        for (int i = 0; i <nums.length ; i++) {
+        for (Integer i : numCounts.keySet()){
             if (numCounts.get(i) >1){
-                duplicates.add(1);
+                duplicates.add(i);
             }
         }
         return duplicates;
     }
 
     
-
-
     public static void main(String[] args) {
 
         HashTable hashTable=new HashTable();
@@ -61,7 +56,7 @@ public class Main {
 //        System.out.println(itemInCommon(array1,array2)); //Interview Question.
 
 
-        System.out.println(findDuplicates(new int[] {5,5,5,2,2}));
+        System.out.println(findDuplicates(new int[] {5,2,2,3,5}));
 
 
 
