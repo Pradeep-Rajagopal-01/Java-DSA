@@ -51,6 +51,16 @@ public class Main {
         return null;
     }
 
+    //DSA Question-Group Anagrams ( ** Interview Question)
+//    public static List<List<String>> groupAnagrams(String[] strings){
+//        HashMap<String,ArrayList<String>> hashMap = new HashMap<>();
+//        ArrayList<String> arrayList = new ArrayList<>();
+//        for (String s : strings){
+//            char[] c = s.toCharArray();
+//            Arrays.sort(c);
+//        }
+//    }
+
     
     public static void main(String[] args) {
 
