@@ -52,14 +52,26 @@ public class Main {
     }
 
     //DSA Question-Group Anagrams ( ** Interview Question)
-//    public static List<List<String>> groupAnagrams(String[] strings){
-//        HashMap<String,ArrayList<String>> hashMap = new HashMap<>();
-//        ArrayList<String> arrayList = new ArrayList<>();
-//        for (String s : strings){
-//            char[] c = s.toCharArray();
-//            Arrays.sort(c);
-//        }
-//    }
+    public static List<List<String>> groupAnagrams(String[] strings){
+        HashMap<String,ArrayList<String>> hashMap = new HashMap<>();
+        for (String s : strings){
+            char[] c = s.toCharArray();
+            Arrays.sort(c);
+            String key = new String(c);
+            if (hashMap.get(key) != null){
+                hashMap.get(key).add(s);
+            }else {
+                ArrayList<String> arrayList = new ArrayList<>();
+                hashMap.put(key,arrayList);
+            }
+        }
+        List<List<String>> lists = new ArrayList<>();
+        for (String s : hashMap.keySet()) {
+            lists.add(hashMap.get(s));
+        }
+        return lists ;
+
+    }
 
     
     public static void main(String[] args) {
@@ -85,8 +97,7 @@ public class Main {
 
 //        System.out.println(findDuplicates(new int[] {5,2,2,3,5}));//DSA Question-Find Duplicates ( ** Interview Question)
 
-        System.out.println(firstNonRepeatingChar("alphabet"));
-
+//        System.out.println(firstNonRepeatingChar("alphabet")); //DSA Question-First Non-Repeating Character ( ** Interview Question)
 
     }
 }
