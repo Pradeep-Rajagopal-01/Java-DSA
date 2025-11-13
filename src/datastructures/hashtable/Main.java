@@ -1,6 +1,5 @@
 package datastructures.hashtable;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class Main {
@@ -52,25 +51,27 @@ public class Main {
     }
 
     //DSA Question-Group Anagrams ( ** Interview Question)
-    public static List<List<String>> groupAnagrams(String[] strings){
-        HashMap<String,ArrayList<String>> hashMap = new HashMap<>();
+    public static List<List<String>> groupAnagrams(String[] strings){//This is your solution.
+        HashMap<String,List<String>> hashMap = new HashMap<>();
+
         for (String s : strings){
             char[] c = s.toCharArray();
             Arrays.sort(c);
             String key = new String(c);
-            if (hashMap.get(key) != null){
+            if (hashMap.containsKey(key)){
                 hashMap.get(key).add(s);
             }else {
-                ArrayList<String> arrayList = new ArrayList<>();
-                hashMap.put(key,arrayList);
+                List<String> list = new ArrayList<>();
+                list.add(s);
+                hashMap.put(key,list);
             }
         }
+
         List<List<String>> lists = new ArrayList<>();
         for (String s : hashMap.keySet()) {
             lists.add(hashMap.get(s));
         }
         return lists ;
-
     }
 
     
@@ -98,6 +99,9 @@ public class Main {
 //        System.out.println(findDuplicates(new int[] {5,2,2,3,5}));//DSA Question-Find Duplicates ( ** Interview Question)
 
 //        System.out.println(firstNonRepeatingChar("alphabet")); //DSA Question-First Non-Repeating Character ( ** Interview Question)
+
+        String strings[] = {"eat","bat","tea","tab","nig"};
+        System.out.println(groupAnagrams(strings));
 
     }
 }
