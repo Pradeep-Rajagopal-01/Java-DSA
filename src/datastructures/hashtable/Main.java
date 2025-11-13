@@ -74,6 +74,22 @@ public class Main {
         return lists ;
     }
 
+    //DSA Question-Two Sum ( ** Interview Question)
+    public static int[] twoSum(int[] nums,int target){
+        HashMap<Integer,Integer> hashMap = new HashMap<>();
+
+        for (int i = 0; i < nums.length ; i++) {
+            hashMap.put(nums[i],i);
+            int result = target-nums[i];
+            if (hashMap.containsKey(result)){
+            }
+
+        }
+
+        return nums;
+
+    }
+
     
     public static void main(String[] args) {
 
@@ -100,8 +116,11 @@ public class Main {
 
 //        System.out.println(firstNonRepeatingChar("alphabet")); //DSA Question-First Non-Repeating Character ( ** Interview Question)
 
-        String strings[] = {"eat","bat","tea","tab","nig"};
-        System.out.println(groupAnagrams(strings));
+//        String strings[] = {"eat","bat","tea","tab","nig"};
+//        System.out.println(groupAnagrams(strings));//DSA Question-Group Anagrams ( ** Interview Question)
+
+
+
 
     }
 }
