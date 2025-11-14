@@ -79,27 +79,27 @@ public class Main {
         HashMap<Integer,Integer> hashMap = new HashMap<>();
 
         for (int i = 0; i < nums.length ; i++) {
-            hashMap.put(nums[i],i);
-            int result = target-nums[i];
-            if (hashMap.containsKey(result)){
+            int complement = target - nums[i];
+            if(hashMap.containsKey(complement)) {
+                if (hashMap.get(complement).equals(nums[i])) hashMap.replace(complement, i);
+                int[] answer = {hashMap.get(complement), i};
+                return answer;
             }
-
+            hashMap.put(nums[i],i);
         }
-
-        return nums;
-
+        return null;
     }
 
     
     public static void main(String[] args) {
 
-        HashTable hashTable=new HashTable();
-
-        hashTable.set("BMW", 2);
-        hashTable.set("Porsche", 4);
-        hashTable.set("RR", 5);
-        hashTable.set("Mega Yatch", 2);
-        hashTable.set("Lamborgini", 1);
+//        HashTable hashTable=new HashTable();
+//
+//        hashTable.set("BMW", 2);
+//        hashTable.set("Porsche", 4);
+//        hashTable.set("RR", 5);
+//        hashTable.set("Mega Yatch", 2);
+//        hashTable.set("Lamborgini", 1);
 
 //        System.out.println("Value of the provided key: "  + hashTable.get("BMW"));
 
@@ -119,8 +119,8 @@ public class Main {
 //        String strings[] = {"eat","bat","tea","tab","nig"};
 //        System.out.println(groupAnagrams(strings));//DSA Question-Group Anagrams ( ** Interview Question)
 
-
-
+        int[] nums = {5,2,7,4};
+        System.out.println(Arrays.toString(twoSum(nums,11)));
 
     }
 }
