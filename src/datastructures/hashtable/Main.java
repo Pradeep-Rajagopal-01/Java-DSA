@@ -77,17 +77,14 @@ public class Main {
     //DSA Question-Two Sum ( ** Interview Question)
     public static int[] twoSum(int[] nums,int target){
         HashMap<Integer,Integer> hashMap = new HashMap<>();
-
         for (int i = 0; i < nums.length ; i++) {
             int complement = target - nums[i];
             if(hashMap.containsKey(complement)) {
-                if (hashMap.get(complement).equals(nums[i])) hashMap.replace(complement, i);
-                int[] answer = {hashMap.get(complement), i};
-                return answer;
+                return new int[] {hashMap.get(complement),i};
             }
-            hashMap.put(nums[i],i);
+            hashMap.put(nums[i], i);
         }
-        return null;
+        return new int[]{};
     }
 
     
@@ -119,8 +116,8 @@ public class Main {
 //        String strings[] = {"eat","bat","tea","tab","nig"};
 //        System.out.println(groupAnagrams(strings));//DSA Question-Group Anagrams ( ** Interview Question)
 
-        int[] nums = {5,2,7,4};
-        System.out.println(Arrays.toString(twoSum(nums,11)));
+        int[] nums ={2, 7, 11, 15};
+        System.out.println(Arrays.toString(twoSum(nums,9)));//DSA Question-Two Sum ( ** Interview Question)
 
     }
 }
