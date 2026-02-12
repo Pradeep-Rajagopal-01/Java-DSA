@@ -8,15 +8,17 @@ public class RecursiveBinarySearchTreeMain {
 
         RecursiveBinarySearchTree rBST = new RecursiveBinarySearchTree();
 
-        rBST.recursiveInsert(5);
-        rBST.recursiveInsert(7);
-        rBST.recursiveInsert(8);
-        rBST.recursiveInsert(3);
-        rBST.recursiveInsert(1);
+//        rBST.recursiveInsert(5);
+//        rBST.recursiveInsert(7);
+//        rBST.recursiveInsert(8);
+//        rBST.recursiveInsert(3);
+//        rBST.recursiveInsert(1);
+//
+//        System.out.println(rBST.recursiveContains(5));
+//        rBST.deleteNode(5);
 
-        System.out.println(rBST.recursiveContains(5));
-        rBST.deleteNode(5);
 
+//        System.out.println(rBST.sortedArrayToBST());
 
     }
 }

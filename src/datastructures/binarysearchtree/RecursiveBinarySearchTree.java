@@ -78,4 +78,18 @@ public class RecursiveBinarySearchTree {
 
     public void deleteNode(int value) { root = deleteNode(root, value); }
 
+    //DSA Question-BST: Convert Sorted Array to Balanced BST ( ** Interview Question)
+//    private Node sortedArrayToBST(int [] nums, int left, int right){
+//        int middleNode = nums[nums.length / 2];
+//
+//        return middleNode;
+//    }
+
+//    public int sortedArrayToBST(){
+//        int nums[] = {1,2,3,4,5,6,7};
+//        return sortedArrayToBST(nums,0,nums.length);
+//    }
+
+
+
 }
