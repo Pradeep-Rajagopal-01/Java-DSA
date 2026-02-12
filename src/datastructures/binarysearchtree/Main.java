@@ -15,7 +15,9 @@ public class Main {
         binarySearchTree.insert(52);
         binarySearchTree.insert(82);
 
-        System.out.println(binarySearchTree.BreathFirstSearch());
+//        System.out.println(binarySearchTree.BreathFirstSearch());
+
+        System.out.println(binarySearchTree.DebthFirstSearchPreOrder());
 
     }
 
