@@ -1,5 +1,9 @@
 package datastructures.binarysearchtree;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
 //Note: We are not gonna use a constructor for the "BinarySearchTree" class cause we want root to be null when we create an object of this class.
 //      We are gonna use the insert() to add nodes.
 public class BinarySearchTree {
@@ -52,4 +56,31 @@ public class BinarySearchTree {
         }
         return false;
     }
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------//
+    //Tree Traversal section uses the existing BinarySearchTree class we are adding the code here.
+    //The Below Codes are related To Tree Traversal.
+
+
+    public ArrayList<Integer> BreathFirstSearch(){
+        Node currentNode = root;
+        Queue<Node> queue = new LinkedList<>();
+        ArrayList<Integer> results = new ArrayList<>();
+        queue.add(currentNode);
+
+        while (!queue.isEmpty()){
+            currentNode=queue.remove();
+            results.add(currentNode.value);
+
+            if (currentNode.left != null ){
+                queue.add(currentNode.left);
+            }
+            if (currentNode.right != null ){
+                queue.add(currentNode.right);
+            }
+        }
+        return results;
+    }
+
 }

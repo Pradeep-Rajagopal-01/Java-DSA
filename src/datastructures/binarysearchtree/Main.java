@@ -7,13 +7,15 @@ public class Main {
 //        This is an iterative version meaning the methods use a loop to move to next nodes.
         BinarySearchTree binarySearchTree = new BinarySearchTree();
 
-        binarySearchTree.insert(7);
-        binarySearchTree.insert(4);
-        binarySearchTree.insert(8);
-        binarySearchTree.insert(1);
+        binarySearchTree.insert(47);
+        binarySearchTree.insert(21);
+        binarySearchTree.insert(76);
+        binarySearchTree.insert(18);
+        binarySearchTree.insert(27);
+        binarySearchTree.insert(52);
+        binarySearchTree.insert(82);
 
-        System.out.println(binarySearchTree.contains(7));
-
+        System.out.println(binarySearchTree.BreathFirstSearch());
 
     }
 
