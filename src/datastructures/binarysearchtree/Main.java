@@ -19,7 +19,10 @@ public class Main {
 
 //        System.out.println(binarySearchTree.DebthFirstSearchPreOrder());
 
-        System.out.println(binarySearchTree.DepthFirstSearchPostOrder());
+//        System.out.println(binarySearchTree.DepthFirstSearchPostOrder());
+
+        System.out.println(binarySearchTree.DepthFirstSearchInOrder());
+
 
     }
 
