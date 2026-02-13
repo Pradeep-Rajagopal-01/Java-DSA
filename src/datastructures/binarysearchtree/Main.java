@@ -21,8 +21,9 @@ public class Main {
 
 //        System.out.println(binarySearchTree.DepthFirstSearchPostOrder());
 
-        System.out.println(binarySearchTree.DepthFirstSearchInOrder());
+//        System.out.println(binarySearchTree.DepthFirstSearchInOrder());
 
+        System.out.println(binarySearchTree.isValidBST());
 
     }
 
