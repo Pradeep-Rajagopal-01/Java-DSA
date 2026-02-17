@@ -3,6 +3,7 @@ package datastructures.binarysearchtree;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 //Note: We are not gonna use a constructor for the "BinarySearchTree" class cause we want root to be null when we create an object of this class.
 //      We are gonna use the insert() to add nodes.
@@ -153,4 +154,28 @@ public class BinarySearchTree {
         }
         return true;
     }
+
+    //DSA Question-BST: Kth Smallest Node ( ** Interview Question)
+    public Integer kthSmallest(int k){
+
+        Stack<Node> stack = new Stack<>();
+        Node currentNode = root;
+        stack.add(root);
+
+        while(!stack.isEmpty()){
+            while (currentNode.left != null){
+                stack.add(currentNode.left);
+                currentNode=currentNode.left;
+            }
+            stack.pop();
+            k--;
+            currentNode=stack.peek();
+
+        }
+
+        return currentNode.value;
+
+
+    }
+
 }
