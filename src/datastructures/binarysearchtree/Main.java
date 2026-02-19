@@ -33,7 +33,7 @@ public class Main {
 
 //        System.out.println(binarySearchTree.isValidBST());
 
-        System.out.println(binarySearchTree.kthSmallest(1));
+        System.out.println(binarySearchTree.kthSmallest(3));
 
 
     }

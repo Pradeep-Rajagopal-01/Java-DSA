@@ -147,8 +147,8 @@ public class BinarySearchTree {
     public boolean isValidBST() {
 
         ArrayList<Integer> results = DepthFirstSearchInOrder();
-        for (int i = 0; i < results.size() -1; i++) {
-            if (results.get(i) >= results.get(i+1)) {
+        for (int i = 0; i < results.size() - 1; i++) {
+            if (results.get(i) >= results.get(i + 1)) {
                 return false;
             }
         }
@@ -156,26 +156,21 @@ public class BinarySearchTree {
     }
 
     //DSA Question-BST: Kth Smallest Node ( ** Interview Question)
-    public Integer kthSmallest(int k){
+    public Integer kthSmallest(int k) {
 
         Stack<Node> stack = new Stack<>();
         Node currentNode = root;
-        stack.add(root);
 
-        while(!stack.isEmpty()){
-            while (currentNode.left != null){
-                stack.add(currentNode.left);
+        while (currentNode!=null || !stack.isEmpty()){
+            while (currentNode!=null){
+                stack.add(currentNode);
                 currentNode=currentNode.left;
             }
-            stack.pop();
+            currentNode=stack.pop();
             k--;
-            currentNode=stack.peek();
-
+            if (k==0) return currentNode.value;
+            currentNode=currentNode.right;
         }
-
-        return currentNode.value;
-
-
+        return null;
     }
-
 }
