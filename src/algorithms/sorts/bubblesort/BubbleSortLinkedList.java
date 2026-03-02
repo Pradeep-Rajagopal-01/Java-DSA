@@ -65,9 +65,36 @@ public class BubbleSortLinkedList {
     public static void bubbleSort(BubbleSortLinkedList list){
         if (list.length < 2) return;
 
-        Node sortedUntil=null;
+        Node sortedUntil= null;
 
+        while (sortedUntil!=list.head.next){
+            Node current=list.head;
+            while (current.next!=null && current.next!=sortedUntil){
+                Node nextNode=current.next;
+                if (current.value > nextNode.value){
+                    int temp=current.value;
+                    current.value= nextNode.value;
+                    nextNode.value=temp;
+                }
+                current=current.next;
+            }
+            sortedUntil=current;
+        }
+    }
 
+    public static void main(String[] args) {
+
+        BubbleSortLinkedList bubbleSortLinkedList = new BubbleSortLinkedList(7);
+        bubbleSortLinkedList.append(5);
+        bubbleSortLinkedList.append(2);
+        bubbleSortLinkedList.append(1);
+        bubbleSortLinkedList.append(6);
+        bubbleSortLinkedList.append(9);
+        bubbleSortLinkedList.append(4);
+
+        bubbleSort(bubbleSortLinkedList);
+
+        bubbleSortLinkedList.printList();
 
     }
 }
