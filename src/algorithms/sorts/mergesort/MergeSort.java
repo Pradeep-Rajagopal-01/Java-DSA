@@ -54,6 +54,8 @@ public class MergeSort {
 
 
         int[] array = {1,4,6,7,3,9,2};
-        System.out.println(Arrays.toString(mergeSort(array)));
+
+        System.out.println("Original Array: " + Arrays.toString(array));
+        System.out.println("Sorted Array: " + Arrays.toString(mergeSort(array)));
     }
 }
