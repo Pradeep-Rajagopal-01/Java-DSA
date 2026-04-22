@@ -1,7 +1,11 @@
 package algorithms.dynamicprogramming.memoization;
 
 public class Fibonacci_Sequence_With_Memoization {
-
+/*
+In Dynamic Programming we have two strategies to solve the same problem: Memoization (Top-Down) and Tabulation (Bottom-Up iteration).
+Memoization uses a Top-Down approach. It is done recursively.
+Logic: "If I've seen this before, return the saved answer. If not, calculate it and save it."
+ */
     static Integer[] memo = new Integer[30];
     //We are using the counter variable to track method calls.
     static int counter=0;
